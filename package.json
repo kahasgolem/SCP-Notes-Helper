@@ -1,0 +1,17 @@
+{
+  "name": "scp-hafrashat-challah-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/player.test.mjs tests/organization.test.mjs",
+    "bundle": "node scripts/bundle.mjs",
+    "build": "node scripts/build-assets.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "pdfjs-dist": "6.4.299"
+  }
+}

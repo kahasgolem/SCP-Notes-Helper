@@ -1,0 +1,2 @@
+import {cpSync,mkdirSync} from 'node:fs';
+mkdirSync('public/vendor',{recursive:true}); for(const name of ['pdf.mjs','pdf.worker.mjs'])cpSync('node_modules/pdfjs-dist/build/'+name,'public/vendor/'+name); for(const name of ['cmaps','standard_fonts','wasm'])cpSync('node_modules/pdfjs-dist/'+name,'public/vendor/'+name,{recursive:true}); console.log('PDF.js assets built; no edition data or media read');

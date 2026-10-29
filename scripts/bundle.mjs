@@ -1,0 +1,14 @@
+import {cpSync,mkdirSync,readFileSync,writeFileSync,existsSync,statSync,readdirSync} from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {validateModel} from '../public/model.js';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),dist=path.join(root,'dist');
+if(existsSync(dist))throw Error('dist already exists; review the existing release before replacing it.');
+const raw=validateModel(JSON.parse(readFileSync(path.join(root,'private-data','notes.json'),'utf8')));
+const publicNotes={schemaVersion:raw.schemaVersion,title:raw.title,program:{name:'Semichas Chaver Program',zman:'Winter 2026',subjects:['Hafrashas Challah','Terumos Uma’asros'],currentMaterial:'Hafrashas Challah class notes'},audio:raw.audio,source:{pages:raw.source.pages,pdfUrl:'source.pdf',fileName:raw.source.fileName,blankPages:raw.source.blankPages,narrationPageOrder:raw.source.narrationPageOrder},chapters:raw.chapters,pages:raw.pages,passages:raw.passages.map(p=>Object.fromEntries(['id','chapterId','page','text','spokenText','sourceText','displayText','textKind','isNarrationCue','lang','start','end','rects','mapping'].filter(key=>p[key]!==undefined).map(key=>[key,p[key]]))),alignment:{granularity:'synthesis-passage',timing:'Cumulative final sample boundaries. No new narration, estimated sentence timing, or word-level alignment.',mappedPassages:raw.passages.filter(p=>p.rects?.length).length,textFallbackPassages:raw.passages.filter(p=>!p.rects?.length&&!p.isNarrationCue).length,narrationCues:raw.passages.filter(p=>p.isNarrationCue).length}};
+const json=JSON.stringify(publicNotes);
+if(/(?:[A-Z]:\\\\Users\\\\|oauth_token|refresh_token|pdfLocalPath)/i.test(json))throw Error('Public data contains a local path or credential field.');
+cpSync(path.join(root,'public'),dist,{recursive:true});mkdirSync(path.join(dist,'data'),{recursive:true});writeFileSync(path.join(dist,'data','notes.json'),json+'\n');cpSync(raw.source.pdfLocalPath,path.join(dist,'source.pdf'));
+const files=[];function walk(dir){for(const item of readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,item.name);if(item.isDirectory())walk(file);else if(item.isFile()){const bytes=readFileSync(file);files.push({path:path.relative(dist,file).split(path.sep).join('/'),bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')})}}}walk(dist);
+const report={directory:dist,createdAt:new Date().toISOString(),files:files.length,bytes:files.reduce((sum,file)=>sum+file.bytes,0),audioReused:raw.audio.url,pdfSha256:files.find(file=>file.path==='source.pdf').sha256,passages:raw.passages.length,sourcePages:raw.source.pages,chapters:raw.chapters.length,manifest:files};writeFileSync(path.join(root,'build-report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,manifest:undefined},null,2));

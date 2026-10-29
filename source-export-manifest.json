@@ -1,0 +1,179 @@
+{
+  "project": "SCP-Notes-Helper",
+  "source": "prepared-source/SCP-Notes-Helper",
+  "copied_at": "2026-10-28",
+  "status": "historical-source-receipt-see-publication-manifest-for-current-tree",
+  "publication_ready": false,
+  "activation_enabled": false,
+  "note": "Source candidate. Data/PDF/audio/vendor omitted; source path parameterization and current edition selection required.",
+  "source_files": [
+    {
+      "path": "package.json",
+      "sha256": "d58bfc738ec0bbead8b42bd599e9eba22ef7d9dc94f0037b5ce1e6339621ef4f",
+      "bytes": 214
+    },
+    {
+      "path": "public/app.js",
+      "sha256": "210308dcd960464e6cbd9319383c1870333ae0e3c7fe6d3b5c11ff0b609fe34d",
+      "bytes": 37452
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "1ceaa105ff7868d357f927d5ee1d69e5548082fdf4a506fe3663c87b27b7b201",
+      "bytes": 7386
+    },
+    {
+      "path": "public/model.js",
+      "sha256": "6352810e29b5272ac7ec32f8755cf03a0502c8abf214b48ae097c85b5360c266",
+      "bytes": 7647
+    },
+    {
+      "path": "public/player.js",
+      "sha256": "76efd868af5133eb6751bc60a7850db73970f49202832213b1967ae567cc4bc4",
+      "bytes": 9873
+    },
+    {
+      "path": "public/sample.html",
+      "sha256": "d04b1420cf72125391e9f3309867359bc70e8c780f2fdfdf0b159e5fc5d19769",
+      "bytes": 17600
+    },
+    {
+      "path": "public/styles.css",
+      "sha256": "4e9e744d16bc022a4b7ce7e1cf8d572925d20cf174d3ca0a8425291f1bd66be7",
+      "bytes": 20536
+    },
+    {
+      "path": "scripts/audit-audio.py",
+      "sha256": "cccd7e72cbd6f635c6637a63f5da59baac00809689e1f39365f07a96190cc80c",
+      "bytes": 4975
+    },
+    {
+      "path": "scripts/build_alignment.py",
+      "sha256": "e53a256b683bf3a6cbe0310c4ddfa533f3d6b96ce6ebeecc657c3e3a89dbe88f",
+      "bytes": 15181
+    },
+    {
+      "path": "scripts/bundle.mjs",
+      "sha256": "65fdfcbd45c868aef11ea73fced674db153232e7bc562939b08cd6a0e8438e71",
+      "bytes": 2905
+    },
+    {
+      "path": "scripts/finalize_alignment_qa.py",
+      "sha256": "d3d08dc87aeaf2b1439c711f2675d8f07245e2aa7f34352a49fbbc9a2116fc98",
+      "bytes": 2451
+    },
+    {
+      "path": "scripts/http-smoke.mjs",
+      "sha256": "73116fd1f470f26b1ea913d37ac60135e0223a1d57a51ac819976b2cf6ea8d68",
+      "bytes": 5591
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "sha256": "f7103714d41fb6486de245953d64427a6dc0d5fbf928f1904e75248cdf8a4a55",
+      "bytes": 2768
+    },
+    {
+      "path": "scripts/test_alignment.py",
+      "sha256": "cc5f19baa9dd272b0f854967fe6ba3d207fd0346d1ac82e10d195012185236da",
+      "bytes": 5034
+    },
+    {
+      "path": "scripts/v2-audio-bootstrap.py",
+      "sha256": "a6bebef68e0cb6030341a450ad343144b153996ac02ccc3d5b28718ebc56cf68",
+      "bytes": 2241
+    },
+    {
+      "path": "scripts/v2-audio-chapters.py",
+      "sha256": "e83b2987f811d61f1ea5bc2b92ab09242da4b2849a4361d3d1d3107e3234b879",
+      "bytes": 6526
+    },
+    {
+      "path": "scripts/v2-audio-early-quality.py",
+      "sha256": "98b14c0c1babf49ac3285731d430eb3f0a95af09f049fad294d1bbc3ac062a28",
+      "bytes": 1557
+    },
+    {
+      "path": "scripts/v2-audio-finish.py",
+      "sha256": "fef371910fe37fc47b3d2e2bffdcac4d6e4508af97a877a956383ff09b969182",
+      "bytes": 1469
+    },
+    {
+      "path": "scripts/v2-audio-hebrew.py",
+      "sha256": "cc03b50579ae777bf8f1845b31d54a121fd7cae190979ee705f3c1a660ed2952",
+      "bytes": 1433
+    },
+    {
+      "path": "scripts/v2-audio-quality-prepare.py",
+      "sha256": "af700dcf1964432829a826e5184163d8d3056f40e443a179586a54e5ab7b6cd6",
+      "bytes": 5272
+    },
+    {
+      "path": "scripts/v2-audio-quality.py",
+      "sha256": "e8339b8ba6bf5c3a413e018bda77e414d3305bfa2239f4905ea58f3792193dd4",
+      "bytes": 2793
+    },
+    {
+      "path": "scripts/v2-audio-supplement.py",
+      "sha256": "39ae69c2c817ff114077132c101d41b31337373bf960a49d108d75105bf95092",
+      "bytes": 4415
+    },
+    {
+      "path": "scripts/v2-audio-tests.py",
+      "sha256": "a856ebed2c176c52f380a64c7c87c603a3418de3e3f4a332b6141f22894f27d5",
+      "bytes": 3931
+    },
+    {
+      "path": "scripts/v2-audio.py",
+      "sha256": "c884e3cd2a7ab031261c6556cf5aa19a5ce08df6ee4a6eccabab345c66966361",
+      "bytes": 30299
+    },
+    {
+      "path": "scripts/v2-bundle.mjs",
+      "sha256": "f2023fc60cc283c84154ba3c4101b32015a78456fef066274397cf25a4abed2e",
+      "bytes": 9042
+    },
+    {
+      "path": "scripts/v2-integrate.py",
+      "sha256": "1b3cb93db776c4a66bfe94ce45a6f61e6d56220b54c434d58aa0681235987001",
+      "bytes": 21836
+    },
+    {
+      "path": "scripts/v2-serve.mjs",
+      "sha256": "38f46eb871fb071224f76e7730173a6d33c41f4efae8848a8ccb2664a4150e7d",
+      "bytes": 3956
+    },
+    {
+      "path": "tests/model.test.mjs",
+      "sha256": "7358a48576df31dacb1031288f30e4e24feef17a4fd39e8b630a14c769617893",
+      "bytes": 5795
+    },
+    {
+      "path": "tests/organization.test.mjs",
+      "sha256": "a94de24b089f40d62943f3e6d14acdafcd149f403d0c485f7cddbd8f1be41457",
+      "bytes": 8818
+    },
+    {
+      "path": "tests/player.test.mjs",
+      "sha256": "159b7d4dbe0c7c85679f68459f23d4645a8852e160e5a46d5d4aeb0dd932cbea",
+      "bytes": 9114
+    },
+    {
+      "path": "tests/v2-model.test.mjs",
+      "sha256": "b6f1ea11d1c51d13d13a80ae230204de4cedc8f69ff082283467879b18f2f023",
+      "bytes": 7108
+    }
+  ],
+  "blocked_files": [],
+  "excluded_categories": [
+    "secrets",
+    "sessions",
+    "queues",
+    "runtime state",
+    "private corpora",
+    "media",
+    "generated dist/caches",
+    "machine configuration",
+    "live startup scripts",
+    "node_modules"
+  ]
+}
